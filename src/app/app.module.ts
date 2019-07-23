@@ -3,14 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { CeoComponent } from './registration/ceo/ceo.component';
+import { SignupComponent } from './registration/signup/signup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CeoComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
