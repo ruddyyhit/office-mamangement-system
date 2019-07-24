@@ -1,49 +1,68 @@
-<form #regForm="ngForm" (ngSubmit)="saveForm()">
-  <div class="panel panel-primary">
-    <div class="panel panel-heading">
-      <h3 class="panel-title">Signup CEO</h3>
-    </div>
-    <div class="panel panel-body">
-      <div class="form-group">
-        <label for="fname">First Name </label>
-        <input type="text" id="fname" name="fname"
-         [(ngModel)]="fname" class="form-control">
+<div class="container">
+  <form #regForm="ngForm" (ngSubmit)="saveForm(regForm)">
+    <div class="panel panel-primary">
+      <div class="panel panel-heading">
+        <h3 class="panel-title">Signup CEO</h3>
       </div>
-
-      <div class="form-group">
-          <label for="lname">Last Name </label>
-          <input type="text" id="lname" name="lname"
-           [(ngModel)]="lname" class="form-control">
-      </div>
-
-      <div class="form-group">
-          <label >Gender</label>
-          <div class="form-control">
-            <label class="radio-inline">
-              <input type="radio" value="Female" name="gender" 
-              [(ngModel)]="gender" checked> Female
-            </label> &nbsp; &nbsp;
-            <label class="radio-inline">
-                <input type="radio" value="Male" 
-                name="gender" [(ngModel)]="gender"> Male
-            </label>
-          </div>
-          </div>
-
+      <div class="panel panel-body">
+        <div class="form-group">
+          <label for="fname">First Name </label>
+          <input type="text" id="fname" name="fname"
+           [(ngModel)]="fname" class="form-control">
+        </div>
+  
+        <div class="form-group">
+            <label for="lname">Last Name </label>
+            <input type="text" id="lname" name="lname"
+             [(ngModel)]="lname" class="form-control">
+        </div>
+  
           <div class="form-group">
-              <label for="email">Email </label>
-              <input type="text" id="email" name="email"
-               [(ngModel)]="email" class="form-control">
+          <label for="email">Email </label>
+          <input type="text" id="email" name="email"
+           [(ngModel)]="email" class="form-control">
           </div>
 
-          <div class="form-group">
-              <label for="role">Role</label>
-              <input type="text" id="role" name="role"
-               [(ngModel)]="role" class="form-control">
+        <div class="form-group">
+        <label for="password">Password </label>
+        <input type="password" id="password" name="password"
+         [(ngModel)]="password" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="cpassword">Confirm Password </label>
+          <input type="password" id="password" name="cpassword"
+           [(ngModel)]="cpassword" class="form-control">
           </div>
 
+        <div class="form-group">
+            <label >Gender</label>
+            <div class="form-control">
+              <label class="radio-inline">
+                <input type="radio" value="Female" name="gender" 
+                [(ngModel)]="gender" checked> Female
+              </label> &nbsp; &nbsp;
+              <label class="radio-inline">
+                  <input type="radio" value="Male" 
+                  name="gender" [(ngModel)]="gender"> Male
+              </label>
+            </div>
+            </div>
+  
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select name="role" id="role"
+                [(ngModel)]="role" class="form-control">
+                <option selected hidden disabled > Role List</option>
+                <option [value]="role.name" *ngFor="let role of roles" >
+                  {{role.name}}
+                </option>
+                </select>
+            </div>
+
+        </div>
+        <button type="submit" class= "btn btn-primary"> Signup</button>
       </div>
-      <button class= "btn btn-primary"> Signup</button>
-    </div>
-</form>
+  </form>
+</div>
 {{regForm.value |json}}
