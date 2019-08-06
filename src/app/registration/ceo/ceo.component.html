@@ -1,3 +1,70 @@
-<p>
-  ceo works!
-</p>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{firstname}} {{lastname}}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-xs-10">
+        <div class="row vertical-align">
+          <div class="col-xs-4">
+            <img  class="imageClass" [src]="photoPath" />
+          </div>
+          <div class="col-xs-8">
+  
+            <div class="row">
+              <div class="col-xs-6">
+                First Name
+              </div>
+              <div class="col-xs-6">
+                : {{firstname}}
+              </div> 
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                Last Name
+              </div>
+              <div class="col-xs-6">
+                : {{lastname}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                Gender
+              </div>
+              <div class="col-xs-6">
+                : {{gender}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+                Email
+              </div>
+              <div class="col-xs-6">
+                : {{email}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-6">
+               Role
+              </div>
+              <div class="col-xs-6">
+                : {{role}}
+              </div>
+            </div>
+          </div>
+        </div> <br>
+        <div class="col-xs-12">
+            <div class="row">
+                <label class="col-xs-6">
+                 Role
+                </label>
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-primary"(click)="managerData()">Manager</button> &nbsp;
+                <button class="btn btn-primary" (click)="employeeData()">Employee</button>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

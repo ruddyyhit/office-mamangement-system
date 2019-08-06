@@ -11,14 +11,8 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   model: Signup = new Signup();
-  role = 'Role List';
   gender = 'Female';
-  roles: Roles [] = [
-    {id: 1, name: 'CEO'},
-    {id: 2, name: 'Manager'},
-    {id: 3, name: 'Employee'},
-    {id: 4, name: 'Admin'}
-  ];
+  role = 'CEO';
   private signup: Signup;
  constructor(private router: Router) {
 }
@@ -41,9 +35,9 @@ export class SignupComponent implements OnInit {
   saveForm(ceoForm: NgForm) {
     console.log(ceoForm.value);
     console.log(this.signup.email);
-    console.log(this.signup.password.confirmPwd);
-    this.router.navigate(['login']);
-    // let  user = JSON.parse(localStorage.getItem('user'));
+    console.log(ceoForm.value.password);
     localStorage.setItem('user', JSON.stringify(ceoForm.value));
+    localStorage.setItem('manager', JSON.stringify(ceoForm.value));
+    this.router.navigate(['login']);
   }
 }
