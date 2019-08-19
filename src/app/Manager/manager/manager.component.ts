@@ -15,6 +15,9 @@ export class ManagerComponent implements OnInit {
   deleteManager() {
     localStorage.removeItem('manager');
   }
+  ceoHome() {
+    this.router.navigate(['ceohome']);
+  }
   ngOnInit() {
   }
 
